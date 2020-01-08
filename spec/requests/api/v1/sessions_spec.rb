@@ -14,11 +14,11 @@ RSpec.describe 'POST /api/v1/auth/sign_in', type: :request do
   describe 'with valid credentials' do
     before do
       post '/api/v1/auth/sign_in',
-           params: {
-             email: user.email,
-             password: user.password
-           },
-           headers: headers
+          params: {
+            email: user.email,
+            password: user.password
+          },
+          headers: headers
     end
 
     it 'returns 200 response status' do
@@ -33,11 +33,11 @@ RSpec.describe 'POST /api/v1/auth/sign_in', type: :request do
   describe 'with invalid password' do
     before do
       post '/api/v1/auth/sign_in',
-           params: {
-             email: user.email,
-             password: 'wrong_password'
-           },
-           headers: headers
+          params: {
+            email: user.email,
+            password: 'wrong_password'
+          },
+          headers: headers
     end
 
     it 'returns 401 response status' do
